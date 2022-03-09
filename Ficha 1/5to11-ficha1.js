@@ -3,7 +3,7 @@ var pra = 9;
 var teo = 17;
 function note(pratica, teorica) {
     var nota = (pratica + teorica) / 2;
-    var a = ""
+    var a = "";
     if (nota >= 10) {
         a = "aprovado";
     }
@@ -52,7 +52,7 @@ var primer_valor = 3;
 var segundo_valor = 2;
 var simbolo = "^"; // + - * / ^
 function conta(primer_valor,segundo_valor,simbolo) {
-    var res=1
+    var res=1;
     if (simbolo=="+"){
         res=primer_valor+segundo_valor;
     }
@@ -66,7 +66,7 @@ function conta(primer_valor,segundo_valor,simbolo) {
         res=primer_valor/segundo_valor;
     }
     else if ((simbolo=="^")){
-        res=Math.pow(primer_valor,segundo_valor)
+        res=Math.pow(primer_valor,segundo_valor);
         //res = primer_valor ** segundo_valor (outra forma de fazer x^y)
     }
     return res;
@@ -126,6 +126,6 @@ function small(numeros) {
     }
     return menor;
 }
-console.log("O maior numero é:", big(numeros))
-console.log("O menor numero é:", small(numeros))
+console.log("O maior numero é:", big(numeros));
+console.log("O menor numero é:", small(numeros));
 console.log("há", numeros.length, "numeros na lista");
