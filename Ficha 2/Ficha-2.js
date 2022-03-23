@@ -195,56 +195,56 @@ function Listall(estudantes){
 }
 
 function Bestgrade(estudantes){
-    var best = 0
-    var bestnum = 0
+    var best = 0;
+    var bestnum = 0;
     for (let i = 0; i < estudantes.length; i++) {
         var estudante = estudantes[i];
         if (estudante.nota>best){
-            best=estudante.nota
-            bestnum=estudante.numero
+            best=estudante.nota;
+            bestnum=estudante.numero;
         }
     }
-    console.log("nota mais alta: ",best," aluno: ",bestnum)
+    console.log("nota mais alta: ",best," aluno: ",bestnum);
 }
 
 function Worstgrade(estudantes){
-    var worst = 20
-    var worstnum = 0
+    var worst = 20;
+    var worstnum = 0;
     for (let i = 0; i < estudantes.length; i++) {
         var estudante = estudantes[i];
         if (estudante.nota<worst){
-            worst=estudante.nota
-            worstnum=estudante.numero
+            worst=estudante.nota;
+            worstnum=estudante.numero;
         }
     }
-    console.log("nota mais baixa: ",worst," aluno: ",worstnum)
+    console.log("nota mais baixa: ",worst," aluno: ",worstnum);
 }
 
 function Media(estudantes){
-    var soma = 0
-    var media = 0
-    var dif = 20
-    var num = 0
-    var not = 0
+    var soma = 0;
+    var media = 0;
+    var dif = 20;
+    var num = 0;
+    var not = 0;
     for (let i = 0; i < estudantes.length; i++) {
         var estudante = estudantes[i];
-        soma+=estudante.nota
+        soma+=estudante.nota;
     }
-    media=soma/estudantes.length
-    console.log("a nota media e: ",media)
+    media=soma/estudantes.length;
+    console.log("a nota media e: ",media);
     for (let i = 0; i < estudantes.length; i++) {
         estudante = estudantes[i];
-        soma=media-estudante.nota
+        soma=media-estudante.nota;
         if (soma<0){
-            soma=soma*(-1)
+            soma=soma*(-1);
         }
         if (soma < dif){
-            dif=soma
-            not=estudante.nota
-            num=estudante.numero
+            dif=soma;
+            not=estudante.nota;
+            num=estudante.numero;
         }
     }
-    console.log("a nota mais proxima da media e: ",not," do aluno: ",num)
+    console.log("a nota mais proxima da media e: ",not," do aluno: ",num);
 }
 
 function Negativas(estudantes){
@@ -267,5 +267,5 @@ function Positivas(estudantes){
     }
 }
 
-var option = 4;
-console.log(ss(estudantes,option))
+var option = 5;
+console.log(ss(estudantes,option));
