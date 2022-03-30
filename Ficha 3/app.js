@@ -1,11 +1,11 @@
 function started() {
-    console.log("Startaed Dowload")
+    console.log("Startaed Dowload");
 }
 function update(progress) {
     console.log(progress, "% of Dowload");
 }
 function completed() {
-    console.log("Dowload Finished")
+    console.log("Dowload Finished");
 }
 function performDownload(x, y, z) {
     console.log(x());
