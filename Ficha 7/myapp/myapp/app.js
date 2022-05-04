@@ -18,7 +18,6 @@ var server = app.listen(8081, function(){
 var conection = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'password',
     database:'ficha7'
 });
 
