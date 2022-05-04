@@ -23,15 +23,45 @@ var conection = mysql.createConnection({
 
 //conection.connect();
 
-app.get('/users',function(request,response){
+app.get('/persons',function(request,response){
     conection.query("SELECT * FROM persons", function(err,rows,fields){
         response.send(rows);
     })
 });
 
-app.get('/users/:id',function(request,response){
+app.get('/persons/:id',function(request,response){
     var id = request.params.id;
     conection.query("SELECT * FROM persons where id = ?",[id], function(err,rows,fields){
         response.send(rows);
     })
 });
+
+app.post('/persons', (request, response) => {
+    var person = request.body;
+    conection.query("INSERT persons SET ?", [person], function(err,rows,fields){
+        response.send("Person inserted with id: "+ rows.insertId);
+    });
+});  
+
+app.delete('/persons', (request, response) => {
+    var person = request.body.id;
+    conection.query("SELECT * FROM persons", function(err,rows,fields){
+        response.send(rows);
+    })
+})  
+
+app.get('/persons/:age/:profession', (request, response) => {
+    var age = request.params.age;
+    var profession = request.params.profession;
+    conection.query("SELECT * FROM persons", function(err,rows,fields){
+        response.send(rows);
+    })
+})  
+
+app.put('/persons/:id', (request, response) => {
+    var id = request.params.id;
+    var person = request.body;
+    conection.query("SELECT * FROM persons", function(err,rows,fields){
+        response.send(rows);
+    })
+})  
