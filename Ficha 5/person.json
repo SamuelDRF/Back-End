@@ -1,0 +1,26 @@
+{
+ "person1":{
+    "id":"1",
+    "FirstName":"Pedro",
+    "LastName":"Lopes",
+    "Gender":"Male",
+    "Age":"15",
+    "Profession":"Student"
+ },
+ "person2":{
+    "id":"2",
+    "FirstName":"Maria",
+    "LastName":"Franco",
+    "Gender":"Female",
+    "Age":"20",
+    "Profession":"Cashier"
+ },
+ "person3":{
+    "id":"3",
+    "FirstName":"Adrian",
+    "LastName":"Teixeira",
+    "Gender":"Undefined",
+    "Age":"21",
+    "Profession":"Police"
+ }
+}
