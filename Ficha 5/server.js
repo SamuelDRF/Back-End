@@ -13,6 +13,10 @@ function readFile(path) {
     return filecontent;
 }
 
+function WriteFile(path,data) {
+  fs.writeFileSync(path, data);
+}
+
 console.log(readFile('./person.json'));
 
 
@@ -45,18 +49,28 @@ app.post('/users', (req, res) => {
   person.id = size;
     //contruir uma string para ser a chave
   personobject['person'+ person.id]=person;
+
+  WriteFile("./person.json",JSON.stringify(personobject));//<------------------------------
+
     //enviar o id da pessoa que foi incerida
   res.send(personobject);
 })  
 
-app.put('/users', (req, res) => {
+app.put('/users/:id', (req, res) => {
   var id = req.params.id;
-  var person = req.body;
+  var personfrombody = req.body;
+  var person = personobject["person"+id];
+
   if (person===undefined){
     res.send("this Id does not exist");
   }
   else{
-    res.send(person);
+    personfrombody.id = parseInt(id);
+    personobject["person"+id] = personfrombody;
+
+    WriteFile("./person.json",JSON.stringify(personobject));//<------------------------------
+
+    res.send(personfrombody);
   }
 })  
 
@@ -68,6 +82,9 @@ app.delete('/users/:id', (req, res) => {
   }
   else{
     delete personobject["person"+id];
+
+    WriteFile("./person.json",JSON.stringify(personobject));//<------------------------------
+
     res.send("Id: "+id+ " was deleted");
   }
 })  
