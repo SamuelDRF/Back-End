@@ -1,0 +1,6 @@
+INSERT INTO projetobackend.product(Product_id, seller_id, title, description, price, url, views, images, comments, tags)
+VALUES ("1","1","Venda de Automovel","FordEscort","95000.00","https://www.custojusto.pt/madeira/veiculos/carros-usados/classico/ford-escort-twin-cam-lotus--34730478","3033","https://cdn.custojusto.pt/api/v1/adimgs/images/9204206411-ford-escort-twin-cam-lotus.jpg?rule=play","Lindo automovel","#classic");
+INSERT INTO projetobackend.product(Product_id, seller_id, title, description, price, url, views, images, comments, tags)
+VALUES ("2","2","Venda de Automovel","Peugeot508","59500.00","https://www.custojusto.pt/madeira/veiculos/carros-usados/sedan/peugeot-508-ii-pse-360cv-36139483","1809","https://cdn.custojusto.pt/api/v1/adimgs/images/8862102625-peugeot-508-ii-pse-360cv.jpg?rule=play","Desportivo","#sport #new");
+INSERT INTO projetobackend.product(Product_id, seller_id, title, description, price, url, views, images, comments, tags)
+VALUES ("3","1","Venda de Automovel","LandRoverDefender","49500.00","https://www.custojusto.pt/madeira/veiculos/carros-usados/suv-tt/land-rover-defender-90-36217259","922","https://cdn.custojusto.pt/api/v1/adimgs/images/70759208-land-rover-defender-90.jpg?rule=play","SUV","#4x4 #rustic #safari");

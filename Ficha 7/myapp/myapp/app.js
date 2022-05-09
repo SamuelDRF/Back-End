@@ -23,12 +23,15 @@ var conection = mysql.createConnection({
 
 //conection.connect();
 
+
+//listo
 app.get('/persons',function(request,response){
     conection.query("SELECT * FROM persons", function(err,rows,fields){
         response.send(rows);
     })
 });
 
+//listo
 app.get('/persons/:id',function(request,response){
     var id = request.params.id;
     conection.query("SELECT * FROM persons where id = ?",[id], function(err,rows,fields){
@@ -36,6 +39,7 @@ app.get('/persons/:id',function(request,response){
     })
 });
 
+//listo
 app.post('/persons', (request, response) => {
     var person = request.body;
     conection.query("INSERT persons SET ?", [person], function(err,rows,fields){
@@ -45,8 +49,8 @@ app.post('/persons', (request, response) => {
 
 app.delete('/persons', (request, response) => {
     var person = request.body.id;
-    conection.query("SELECT * FROM persons", function(err,rows,fields){
-        response.send(rows);
+    conection.query("DELETE MAX('id') FROM persons", function(err,rows,fields){
+        response.send(rows)
     })
 })  
 
