@@ -49,8 +49,8 @@ app.post('/persons', (request, response) => {
 
 app.delete('/persons', (request, response) => {
     var person = request.body.id;
-    conection.query("DELETE MAX('id') FROM persons", function(err,rows,fields){
-        response.send(rows)
+    conection.query("SELECT * FROM persons", function(err,rows,fields){
+        response.send(rows);
     })
 })  
 
