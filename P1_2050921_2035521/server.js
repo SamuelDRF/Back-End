@@ -1,6 +1,5 @@
 const express = require ('express');
-//const mysql = require ('mysql');
-const mysql = require('mysql2')
+const mysql = require ('mysql');
 
 const app = express();
 app.use(express.json());
@@ -18,5 +17,11 @@ var server = app.listen(8081, function(){
 var conection = mysql.createConnection({
     host:'localhost',
     user:'root',
-    database:'ficha7'
+    database:'projetobackend'
+});
+
+app.get('/product',function(request,response){
+    conection.query("SELECT * FROM product", function(err,rows,fields){
+        response.send(rows);
+    })
 });
