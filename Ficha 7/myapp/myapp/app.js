@@ -47,7 +47,7 @@ app.post('/persons', (request, response) => {
     });
 });  
 
-
+//listo
 app.delete('/persons/:id', (request, response) => {
     var sql = "DELETE FROM persons WHERE id = ?";
     var id = request.params.id;
@@ -56,6 +56,7 @@ app.delete('/persons/:id', (request, response) => {
         response.send("affected Rows:"+result.affectedRows);
     });
 });
+
 
 app.get('/persons/:age/:profession', (request, response) => {
     var age = request.params.age;
