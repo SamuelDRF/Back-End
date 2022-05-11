@@ -57,19 +57,21 @@ app.delete('/persons/:id', (request, response) => {
     });
 });
 
-//voy
+//listo
 app.get('/persons/:age/:profession', (request, response) => {
     var age = request.params.age;
     var profession = request.params.profession;
-    conection.query("SELECT * FROM persons", function(err,rows,fields){
+    conection.query("SELECT * FROM persons WHERE age = ? AND profession = ?", [age, profession] , function(err,rows,fields){
         response.send(rows);
-    })
-})  
+    });
+});
+
 
 app.put('/persons/:id', (request, response) => {
     var id = request.params.id;
     var person = request.body;
-    conection.query("SELECT * FROM persons", function(err,rows,fields){
-        response.send(rows);
-    })
-})  
+    conection.query("UPDATE persons set ? WHERE id = ?",[person,id], function(error,results,fields){
+        if (error) throw error;
+        response.send("Changed:"+results.changedRows);
+    });
+});
