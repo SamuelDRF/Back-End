@@ -44,6 +44,14 @@ app.get('/product/:id',function(request,response){
     })
 });
 
+
+app.put('/product/:id' ,function(req, res){
+    var pro_Id = req.params.id;
+    conection.query("UPDATE product SET views = views + 1 WHERE product.id = ?", [pro_Id], function(err,rows,fields){
+        res.send(rows);
+    })
+})
+
 //Ae
 app.get('/product/tags',function(request,response){
     var id = request.params.id;
