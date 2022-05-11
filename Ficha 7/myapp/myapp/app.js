@@ -47,12 +47,15 @@ app.post('/persons', (request, response) => {
     });
 });  
 
-app.delete('/persons', (request, response) => {
-    var person = request.body.id;
-    conection.query("SELECT * FROM persons", function(err,rows,fields){
-        response.send(rows);
-    })
-})  
+
+app.delete('/persons/:id', (request, response) => {
+    var sql = "DELETE FROM persons WHERE id = ?";
+    var id = request.params.id;
+    conection.query(sql, id, function(error,result,fields){
+        if (error) throw error;
+        response.send("affected Rows:"+result.affectedRows);
+    });
+});
 
 app.get('/persons/:age/:profession', (request, response) => {
     var age = request.params.age;
