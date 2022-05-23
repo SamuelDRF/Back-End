@@ -1,0 +1,2 @@
+PATH=/user/:name;METHOD=GET;DATE=Mon May 23 2022 20:15:45 GMT+0100 (Hora de verão da Europa Ocidental)
+PATH=/user/:name;METHOD=GET;DATE=Mon May 23 2022 20:19:17 GMT+0100 (Hora de verão da Europa Ocidental)
