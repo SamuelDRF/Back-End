@@ -126,7 +126,13 @@ app.delete('/persons', (request, response) => {
 });
 
 app.put('/persons/:id', (request, response) => {
+    var details = request.body;
     var id = request.params.id;
-    var person = request.body;
-    
+    Person.update(details,{
+        where:{
+            id: id
+        }
+    }).then((updated) =>{
+        response.send("Done "+ updated)
+    })
 });
