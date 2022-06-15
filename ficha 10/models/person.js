@@ -1,10 +1,10 @@
 //definioção do modelo
 module.exports = (sequelize,type)=> {
-    return sequelize.sequelize('persons',{
-    firstName: DataTypes.TEXT,
-    lastName: DataTypes.TEXT,
-    profession: DataTypes.TEXT,
-    age: DataTypes.INTEGER
+    return sequelize.define('persons',{
+        firstName: type.TEXT,
+        lastName: type.TEXT,
+        profession: type.TEXT,
+        age: type.INTEGER
     });
-}
+};
     

@@ -1,9 +1,16 @@
 
-const person = require("../sequelize").person;
+const Person = require("../sequelize").Person;
 
 exports.getallperson = function(req, res, next) {
-    person.findall()
+    Person.findAll()
     .then(results => {
         res.send(results)
     });
+}
+
+exports.create = function(req, res, next) {
+    var person = request.body;
+    Person.create(person).then(person => {
+        response.send(person);
+    })
 }
